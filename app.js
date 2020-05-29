@@ -13,9 +13,9 @@ function app(people){
       break;
     case 'no':
       // TODO: search by traits
-      searchResults = searchByTraits(people);
+      searchResults = searchByTraits(people)
       break;
-      default:
+      default:people
     app(people); // restart app
       break;
   }
@@ -73,8 +73,18 @@ function searchByName(people){
 }
 
 function searchByTraits(people){
-  let gender = promptFor("Do you know the gender of the person?")
+  let gender = promptFor("What is the person's gender?", chars);
+  let dob = promptFor("What is the person's Date Of Birth?", chars);
+  let height = promptFor("What is the person's height?", chars);
+  let weight = promptFor("What is the person's weight?", chars);
+  let eyeColor = promptFor("What is the person's eye color?", chars);
+  let occupation = promptFor("What is the person's occupation?", chars);
+  
+  let foundTrait = traits.filter(function(traits){
+    if()
+  }
 }
+
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
@@ -88,6 +98,7 @@ function displayPerson(person){
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
   // TODO: finish getting the rest of the information to display
+  
   alert(personInfo);
 }
 
