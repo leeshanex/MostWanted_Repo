@@ -81,8 +81,15 @@ function searchByTraits(people){
   let occupation = promptFor("What is the person's occupation?", chars);
   
   let foundTrait = traits.filter(function(traits){
-    if()
-  }
+    if(traits.gender === gender && traits.dob === dob && traits.height === height && traits.weight === weight && traits.eyeColor === eyeColor && traits.occupation === occupation) {
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+
+  return foundTrait
 }
 
 // alerts a list of people
