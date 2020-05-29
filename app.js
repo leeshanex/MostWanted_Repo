@@ -74,26 +74,6 @@ function searchByName(people){
   return foundPerson;
 }
 
-function searchByTraits(people){
-  let gender = promptFor("What is the person's gender?", chars);
-  let dob = promptFor("What is the person's Date Of Birth?", chars);
-  let height = promptFor("What is the person's height?", chars);
-  let weight = promptFor("What is the person's weight?", chars);
-  let eyeColor = promptFor("What is the person's eye color?", chars);
-  let occupation = promptFor("What is the person's occupation?", chars);
-  
-  let foundTrait = traits.filter(function(traits){
-    if(traits.gender === gender && traits.dob === dob && traits.height === height && traits.weight === weight && traits.eyeColor === eyeColor && traits.occupation === occupation) {
-      return true;
-    }
-    else{
-      return false;
-    }
-  })
-
-  return foundTrait;
-}
-
 function searchByTraits(people) {
 let searchType = promptFor("What trait would you like to search by? 'gender', dob, height, 'weight', 'eyeColor', 'occupation").toLowerCase();
 let filterPeople = [];
@@ -126,6 +106,7 @@ switch(userSearchChoices){
       searchByTraits(people);
       break;
   }
+  return filterPeople;
 }
 
 // alerts a list of people
@@ -140,12 +121,6 @@ function displayPerson(person){
   // height, weight, age, name, occupation, eye color.
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
-  personInfo += "Gender: " + person.gender + "\n";
-  personInfo += "DOB: " + person.dob + "\n";
-  personInfo += "Height: " + person.height + "\n";
-  personInfo += "Weight: " + person.weight + "\n";
-  personInfo += "Eye Color: " + person.eyeColor + "\n";
-  personInfo += "Occupation: " + person.occupation + "\n";
   // TODO: finish getting the rest of the information to display
   personInfo += "Gender: " + person.gender + "\n";
   personInfo += "Dob: " + person.dob + "\n";
