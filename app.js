@@ -24,6 +24,8 @@ function app(people){
   mainMenu(searchResults, people);
 }
 
+
+
 // Menu function to call once you find who you are looking for
 function mainMenu(person, people){
 
@@ -89,7 +91,36 @@ function searchByTraits(people){
     }
   })
 
-  return foundTrait
+  return foundTrait;
+}
+
+function searchByTraits(people) {
+let searchType = promptFor("What trait would you like to search by? 'gender', dob, height, 'weight', 'eyeColor', 'occupation").toLowerCase();
+let filterPeople = [];
+
+switch(userSearchChoices){
+    case "gender":
+    filterPeople = searchByGender(people);
+    break;
+    case "dob":
+    filterPeople = searchByDob(people);
+    break;
+    case "height":
+    filterPeople = searchByHeight(people);
+    break;
+    case "weight":
+    filterPeople = searchByWeight(people);
+    break;
+    case "eyeColor":
+    filterPeople = searchByEyeColor(people);
+    break;
+    case "occupation":
+    filterPeople = searchByOccupation(people);
+    break;
+    case "restart":
+    app(people); // restart
+    break;
+  }
 }
 
 // alerts a list of people
@@ -105,7 +136,12 @@ function displayPerson(person){
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
   // TODO: finish getting the rest of the information to display
-  
+  personInfo += "Gender: " + person.gender + "\n";
+  personInfo += "Dob: " + person.dob + "\n";
+  personInfo += "Height: " + person.height + "\n";
+  personInfo += "Weight: " + person.weight + "\n";
+  personInfo += "EyeColor: " person.eyeColor + "\n";
+  personInfo += "Occupation: " person.occupation + "\n";
   alert(personInfo);
 }
 
