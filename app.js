@@ -106,7 +106,6 @@ switch(userSearchChoices){
       searchByTraits(people);
       break;
   }
-  return filterPeople;
 }
 
 // alerts a list of people
