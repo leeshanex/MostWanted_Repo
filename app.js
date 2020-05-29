@@ -126,8 +126,8 @@ function displayPerson(person){
   personInfo += "Dob: " + person.dob + "\n";
   personInfo += "Height: " + person.height + "\n";
   personInfo += "Weight: " + person.weight + "\n";
-  personInfo += "EyeColor: " person.eyeColor + "\n";
-  personInfo += "Occupation: " person.occupation + "\n";
+  personInfo += "EyeColor: " + person.eyeColor + "\n";
+  personInfo += "Occupation: " + person.occupation + "\n";
   alert(personInfo);
 }
 
