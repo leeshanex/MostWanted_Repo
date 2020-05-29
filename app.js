@@ -13,6 +13,7 @@ function app(people){
       break;
     case 'no':
       // TODO: search by traits
+      searchResults = searchByTraits(people);
       break;
       default:
     app(people); // restart app
@@ -71,6 +72,9 @@ function searchByName(people){
   return foundPerson;
 }
 
+function searchByTraits(people){
+  let gender = promptFor("Do you know the gender of the person?")
+}
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
