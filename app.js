@@ -120,6 +120,11 @@ switch(userSearchChoices){
     case "restart":
     app(people); // restart
     break;
+
+    default:
+      alert("Please Enter A Correct Entry Option");
+      searchByTraits(people);
+      break;
   }
 }
 
