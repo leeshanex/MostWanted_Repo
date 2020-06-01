@@ -121,7 +121,8 @@ switch(searchType){
     case "restart":
     app(people); // restart
     break;
-
+    case "quit":
+    return;
     default:
       alert("Please Enter A Correct Entry Option");
       searchByTraits(people);
