@@ -76,24 +76,28 @@ function searchByName(people){
   return foundPerson;
 }
 
-// function searchByGender(people){
-//   switch(genderSearch){
-//     case "male":
-//     let genderFound = people.filter(function(person){
-//       if(person.gender === genderSearch){
-//          let x = genderFound.sort(person[0].lastName, person[0].firstName);
-//           return x;
-//         }
-//         else{
-//           return false; 
-//         }})
-//             return genderFound;
-//    break;
-//     case "female":
-//     break;
-//     default:
-//     return mainMenu(person, people);
-//   }
+function searchByGender(people){
+  let genderSearch = prompt("male or female?");
+  switch(genderSearch){
+    case "male":
+    let genderFound = people.filter(function(person){
+      if(person.gender === genderSearch){
+        let x = person.lastName + ", " + person.firstName;
+        let foundPeople = x +" "+ person.gender;
+        alert(foundPeople);
+          return foundPeople;
+        }
+        else{
+          return false; 
+        }
+        })
+    return genderFound;
+    break;
+    case "female":
+    break;
+    default:
+    return mainMenu(person, people);
+  }}
   
 
 function searchByTraits(people) {
