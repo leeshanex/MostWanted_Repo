@@ -80,10 +80,10 @@ function searchByGender(people){
   let genderSearch = prompt("male or female?");
   switch(genderSearch){
     case "male":
-    let genderFound = people.filter(function(person){
+    let maleFound = people.filter(function(person){
       if(person.gender === genderSearch){
-        let x = person.lastName + ", " + person.firstName;
-        let foundPeople = x +" "+ person.gender;
+       let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
+       let foundPeople = x +"\n"+ "Gender: "+ person.gender;
         alert(foundPeople);
           return foundPeople;
         }
@@ -91,13 +91,25 @@ function searchByGender(people){
           return false; 
         }
         })
-    return genderFound;
+    return maleFound;
     break;
     case "female":
+    let femaleFound = people.filter(function(person){
+      if(person.gender === genderSearch){
+        let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
+        let foundPeople = x +"\n"+ "Gender: "+ person.gender;
+        alert(foundPeople);
+          return foundPeople;
+        }
+        else{
+          return false; 
+        }})
+        return femaleFound;
     break;
     default:
     return mainMenu(person, people);
-  }}
+  }
+}
   
 
 function searchByTraits(people) {
@@ -106,7 +118,6 @@ let filterPeople = [];
 
 switch(searchType){
     case "gender":
-    let genderSearch = prompt("male or female?");
     searchByGender(people);
     break;
     case "dob":
