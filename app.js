@@ -44,9 +44,11 @@ function mainMenu(person, people){
     // TODO: get person's info
     break;
     case "family":
+    displayFamily(person)
     // TODO: get person's family
     break;
     case "descendants":
+    displayDescendants(person)
     // TODO: get person's descendants
     break;
     case "restart":
@@ -116,6 +118,8 @@ function displayPeople(people){
     return person.firstName + " " + person.lastName;
   }).join("\n"));
 }
+
+
 
 function displayPerson(person){
   // print all of the information about a person:
