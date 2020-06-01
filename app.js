@@ -40,6 +40,7 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
+    displayPerson(person);
     // TODO: get person's info
     break;
     case "family":
@@ -106,7 +107,6 @@ switch(userSearchChoices){
       searchByTraits(people);
       break;
   }
-  return filterPeople;
 }
 
 // alerts a list of people
