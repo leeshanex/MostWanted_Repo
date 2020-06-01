@@ -111,15 +111,62 @@ function searchByGender(people){
     return mainMenu(person, people);
   }
 }
-  
+
+function searchByOccupation(people){
+let occupationSearch = prompt("Please enter the occupation of the person")
+let personFound = people.filter(function(person){
+  if(person.occupation === occupationSearch){
+    let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
+    let foundPeople = x +"\n"+ "Occupation: "+ person.occupation;
+    alert(foundPeople);
+    return foundPeople;
+  }
+  else{
+    return false;
+  }
+})
+return personFound;
+}
+
+function searchByEyeColor(people){
+  let eyeColorSearch = prompt("Please enter the eye color of the person")
+let personFound = people.filter(function(person){
+  if(person.eyeColor === eyeColorSearch){
+    let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
+    let foundPeople = x +"\n"+ "Eye color: "+ person.eyeColor;
+    alert(foundPeople);
+    return foundPeople;
+  }
+  else{
+    return false;
+  }
+})
+return personFound;
+}
+
+function searchByWeight(people){
+   let weightSearch = prompt("Please enter the weight of the person (lbs.)")
+let personFound = people.filter(function(person){
+  if(person.weight === parseInt(weightSearch)){
+    let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
+    let foundPerson = x +"\n"+ "Weight: "+ person.weight;
+    alert(foundPerson);
+    return foundPerson;
+  }
+  else{
+    return false;
+  }
+})
+return personFound;
+}
 
 function searchByTraits(people) {
-let searchType = promptFor("What trait would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
+let searchType = promptFor("Which trait(s) would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
 let filterPeople = [];
 
 switch(searchType){
     case "gender":
-    searchByGender(people);
+    filterPeople = searchByGender(people);
     break;
     case "dob":
     filterPeople = searchByDob(people);
