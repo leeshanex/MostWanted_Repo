@@ -176,6 +176,22 @@ let personFound = people.filter(function(person){
 return personFound;
 }
 
+function searchByDob(people){
+    let dobSearch = prompt("Please enter the date of birth (DOB) of the person")
+let personFound = people.filter(function(person){
+  if(person.dob === dobSearch){
+    let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
+    let foundPerson = x +"\n"+ "DOB: "+ person.dob;
+    alert(foundPerson);
+    return foundPerson;
+  }
+  else{
+    return false;
+  }
+})
+return personFound;
+}
+
 function searchByTraits(people) {
 let searchType = promptFor("Which trait(s) would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
 let filterPeople = [];
