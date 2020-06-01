@@ -113,7 +113,7 @@ function searchByGender(people){
   
 
 function searchByTraits(people) {
-let searchType = promptFor("What trait would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
+let searchType = promptFor("Which trait(s) would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
 let filterPeople = [];
 
 switch(searchType){
