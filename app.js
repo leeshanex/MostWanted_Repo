@@ -142,6 +142,23 @@ let personFound = people.filter(function(person){
 })
 return personFound;
 }
+
+function searchByWeight(people){
+   let weightSearch = prompt("Please enter the weight of the person (lbs.)")
+let personFound = people.filter(function(person){
+  if(person.weight === parseInt(weightSearch)){
+    let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
+    let foundPerson = x +"\n"+ "Weight: "+ person.weight;
+    alert(foundPerson);
+    return foundPerson;
+  }
+  else{
+    return false;
+  }
+})
+return personFound;
+}
+
 function searchByTraits(people) {
 let searchType = promptFor("Which trait(s) would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
 let filterPeople = [];
