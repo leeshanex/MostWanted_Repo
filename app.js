@@ -41,7 +41,6 @@ function mainMenu(person, people){
   switch(displayOption){
     case "info":
     displayPerson(person);
-    // TODO: get person's info
     break;
     case "family":
     displayFamily(person)
@@ -77,13 +76,34 @@ function searchByName(people){
   return foundPerson;
 }
 
+// function searchByGender(people){
+//   switch(genderSearch){
+//     case "male":
+//     let genderFound = people.filter(function(person){
+//       if(person.gender === genderSearch){
+//          let x = genderFound.sort(person[0].lastName, person[0].firstName);
+//           return x;
+//         }
+//         else{
+//           return false; 
+//         }})
+//             return genderFound;
+//    break;
+//     case "female":
+//     break;
+//     default:
+//     return mainMenu(person, people);
+//   }
+  
+
 function searchByTraits(people) {
-let searchType = promptFor("What trait would you like to search by? 'gender', dob, height, 'weight', 'eyeColor', 'occupation").toLowerCase();
+let searchType = promptFor("What trait would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
 let filterPeople = [];
 
-switch(userSearchChoices){
+switch(searchType){
     case "gender":
-    filterPeople = searchByGender(people);
+    let genderSearch = prompt("male or female?");
+    searchByGender(people);
     break;
     case "dob":
     filterPeople = searchByDob(people);
@@ -94,7 +114,7 @@ switch(userSearchChoices){
     case "weight":
     filterPeople = searchByWeight(people);
     break;
-    case "eyeColor":
+    case "eye color":
     filterPeople = searchByEyeColor(people);
     break;
     case "occupation":
