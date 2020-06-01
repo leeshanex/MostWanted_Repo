@@ -110,7 +110,21 @@ function searchByGender(people){
     return mainMenu(person, people);
   }
 }
-  
+function searchByOccupation(people){
+let occupationSearch = prompt("Please enter the occupation of the person")
+let personFound = people.filter(function(person){
+  if(person.occupation === occupationSearch){
+    let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
+    let foundPeople = x +"\n"+ "Occupation: "+ person.occupation;
+    alert(foundPeople);
+    return foundPeople;
+  }
+  else{
+    return false;
+  }
+})
+return personFound;
+}
 
 function searchByTraits(people) {
 let searchType = promptFor("Which trait(s) would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
