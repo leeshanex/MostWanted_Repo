@@ -160,38 +160,6 @@ let personFound = people.filter(function(person){
 return personFound;
 }
 
-function searchByHeight(people){
-  let heightSearch = prompt("Please enter the height of the person (inches)")
-let personFound = people.filter(function(person){
-  if(person.height === parseInt(heightSearch)){
-    let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
-    let foundPerson = x +"\n"+ "Height: "+ person.height + " inches";
-    alert(foundPerson);
-    return foundPerson;
-  }
-  else{
-    return false;
-  }
-})
-return personFound;
-}
-
-function searchByDob(people){
-    let dobSearch = prompt("Please enter the date of birth (DOB) of the person")
-let personFound = people.filter(function(person){
-  if(person.dob === dobSearch){
-    let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
-    let foundPerson = x +"\n"+ "DOB: "+ person.dob;
-    alert(foundPerson);
-    return foundPerson;
-  }
-  else{
-    return false;
-  }
-})
-return personFound;
-}
-
 function searchByTraits(people) {
 let searchType = promptFor("Which trait(s) would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
 let filterPeople = [];
@@ -265,7 +233,7 @@ function displayDescendants(person, people, allDescendants = []) {
     }
   });
   if (newArray.length > 1) {
-    for (i = 0; i < newArray.length; i++) {
+    for (var i = 0; i < newArray.length; i++) {
       displayDescendants(newArray[i], data, allDescendants);
     }
     loopFinish = true;
