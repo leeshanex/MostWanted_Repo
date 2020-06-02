@@ -156,7 +156,7 @@ return personFound;
 
 function searchByTraits(people) {
 let searchType = promptFor("Which trait(s) would you like to search by? 'gender', 'dob', 'height', 'weight', 'eye color', 'occupation'", chars).toLowerCase();
-let filterPeople = [];
+let filterPeople;
 
 switch(searchType){
     case "gender":
@@ -166,6 +166,7 @@ switch(searchType){
     case "gender" + " " + "dob":
     searchByGender(people);
     searchByDob(people);
+    displayPeople(filterPeople);
     break;
     case "dob":
     filterPeople = searchByDob(people);
@@ -183,10 +184,11 @@ switch(searchType){
     filterPeople = searchByEyeColor(people);
     displayPeople(filterPeople);
     break;
-    case "eye color" + "gender" + "occupation":
-    searchByEyeColor(people);
+    case "gender"+ " " + "eye color" + " "  + "occupation":
     searchByGender(people);
+    searchByEyeColor(people);
     searchByOccupation(people);
+    displayPeople(filterPeople);
     case "occupation":
     filterPeople = searchByOccupation(people);
     displayPeople(filterPeople);
