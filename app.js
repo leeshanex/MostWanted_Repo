@@ -81,8 +81,7 @@ function searchByGender(people){
   	let genderSearch = prompt("male or female?");
   	let personFound = people.filter(function(person){
   		if(person.gender === genderSearch){
-  			 alert(people.map(function(personFound){
-  				return person.firstName + " " + person.lastName;}).join("\n"));
+  				return true;
   		}
   		else{
   				return false;
@@ -95,8 +94,7 @@ function searchByOccupation(people){
 let occupationSearch = prompt("Please enter the occupation of the person")
 let personFound = people.filter(function(person){
   if(person.occupation === occupationSearch){
-    alert(people.map(function(personFound){
-  				return person.firstName + " " + person.lastName;}).join("\n"));
+    return true;
   }
   else{
     return false;
@@ -109,8 +107,7 @@ function searchByEyeColor(people){
   let eyeColorSearch = prompt("Please enter the eye color of the person")
 let personFound = people.filter(function(person){
   if(person.eyeColor === eyeColorSearch){
-   alert(people.map(function(personFound){
-  				return person.firstName + " " + person.lastName;}).join("\n"));
+  return true;
   }
   else{
     return false;
@@ -123,8 +120,7 @@ function searchByWeight(people){
    let weightSearch = prompt("Please enter the weight of the person (lbs.)")
 let personFound = people.filter(function(person){
   if(person.weight === parseInt(weightSearch)){
-    alert(people.map(function(personFound){
-  				return person.firstName + " " + person.lastName;}).join("\n"));
+    return true;
   }
   else{
     return false;
@@ -136,8 +132,7 @@ function searchByHeight(people){
   let heightSearch = prompt("Please enter the height of the person (inches)")
 let personFound = people.filter(function(person){
   if(person.height === parseInt(heightSearch)){
-    alert(people.map(function(personFound){
-  				return person.firstName + " " + person.lastName;}).join("\n"));
+    return true;
   }
   else{
     return false;
@@ -150,8 +145,7 @@ function searchByDob(people){
     let dobSearch = prompt("Please enter the date of birth (DOB) of the person")
 let personFound = people.filter(function(person){
   if(person.dob === dobSearch){
-    alert(people.map(function(personFound){
-  				return person.firstName + " " + person.lastName;}).join("\n"));
+   return true;
   }
   else{
     return false;
@@ -167,6 +161,7 @@ let filterPeople = [];
 switch(searchType){
     case "gender":
     filterPeople = searchByGender(people);
+    displayPeople(filterPeople);
     break;
     case "gender" + " " + "dob":
     searchByGender(people);
@@ -174,15 +169,19 @@ switch(searchType){
     break;
     case "dob":
     filterPeople = searchByDob(people);
+    displayPeople(filterPeople);
     break;
     case "height":
     filterPeople = searchByHeight(people);
+    displayPeople(filterPeople);
     break;
     case "weight":
     filterPeople = searchByWeight(people);
+    displayPeople(filterPeople);
     break;
     case "eye color":
     filterPeople = searchByEyeColor(people);
+    displayPeople(filterPeople);
     break;
     case "eye color" + "gender" + "occupation":
     searchByEyeColor(people);
@@ -190,6 +189,7 @@ switch(searchType){
     searchByOccupation(people);
     case "occupation":
     filterPeople = searchByOccupation(people);
+    displayPeople(filterPeople);
     break;
     case "restart":
     app(people); // restart
