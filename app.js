@@ -78,38 +78,18 @@ function searchByName(people){
 }
 
 function searchByGender(people){
-  let genderSearch = prompt("male or female?");
-  switch(genderSearch){
-    case "male":
-    let maleFound = people.filter(function(person){
-      if(person.gender === genderSearch){
-       let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
-       let foundPeople = x +"\n"+ "Gender: "+ person.gender;
-        alert(foundPeople);
-          return foundPeople;
-        }
-        else{
-          return false; 
-        }
-        })
-    return maleFound;
-    break;
-    case "female":
-    let femaleFound = people.filter(function(person){
-      if(person.gender === genderSearch){
-        let x = "First Name: " + person.firstName + "\n" + "Last Name: "+person.lastName + "\n";
-        let foundPeople = x +"\n"+ "Gender: "+ person.gender;
-        alert(foundPeople);
-          return foundPeople;
-        }
-        else{
-          return false; 
-        }})
-        return femaleFound;
-    break;
-    default:
-    return mainMenu(person, people);
-  }
+  	let genderSearch = prompt("male or female?");
+  	let personFound = people.filter(function(person){
+  		if(person.gender === genderSearch){
+  			alert(people.map(function(person){
+  				return person.firstName + " " + person.lastName;
+  				}).join("\n"));
+  		}
+  		else{
+  				return false;
+  			}
+	})
+	return personFound;
 }
 
 function searchByOccupation(people){
@@ -200,6 +180,10 @@ switch(searchType){
     case "gender":
     filterPeople = searchByGender(people);
     break;
+    case "gender" + " " + "dob":
+    searchByGender(people);
+    searchByDob(people);
+    break;
     case "dob":
     filterPeople = searchByDob(people);
     break;
@@ -212,6 +196,10 @@ switch(searchType){
     case "eye color":
     filterPeople = searchByEyeColor(people);
     break;
+    case "eye color" + "gender" + "occupation":
+    searchByEyeColor(people);
+    searchByGender(people);
+    searchByOccupation(people);
     case "occupation":
     filterPeople = searchByOccupation(people);
     break;
