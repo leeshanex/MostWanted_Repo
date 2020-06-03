@@ -164,8 +164,7 @@ switch(searchType){
     displayPeople(filterPeople);
     break;
     case "gender" + " " + "dob":
-    searchByGender(people);
-    searchByDob(people);
+    filterPeople = searchByGender(people) && searchByDob(people);
     displayPeople(filterPeople);
     break;
     case "dob":
@@ -185,9 +184,9 @@ switch(searchType){
     displayPeople(filterPeople);
     break;
     case "gender"+ " " + "eye color" + " "  + "occupation":
-    searchByGender(people);
-    searchByEyeColor(people);
-    searchByOccupation(people);
+    filterPeople = searchByGender(people) &&
+    searchByEyeColor(people) &&
+    searchByOccupation(people) &&
     displayPeople(filterPeople);
     case "occupation":
     filterPeople = searchByOccupation(people);
