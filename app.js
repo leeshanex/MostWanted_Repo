@@ -184,9 +184,7 @@ switch(searchType){
     displayPeople(filterPeople);
     break;
     case "gender"+ " " + "eye color" + " "  + "occupation":
-    filterPeople = searchByGender(people) &&
-    searchByEyeColor(people) &&
-    searchByOccupation(people) &&
+    filterPeople = searchByGender(people) && searchByEyeColor(people) && searchByOccupation(people);
     displayPeople(filterPeople);
     case "occupation":
     filterPeople = searchByOccupation(people);
